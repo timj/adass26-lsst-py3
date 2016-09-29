@@ -1,12 +1,12 @@
 
-The LSST Data Processing Software Stack: Summer 2015 Release
+Porting the LSST Data Management Pipeline Software to Python 3
 ---
 
-Paper presented at the Astronomical Data Analysis Software and Systems XXV conference held in Sydney, Australia in October 2015.
+Paper presented at the Astronomical Data Analysis Software and Systems XXVI conference held in Trieste, Italy in October 2016.
 
-Submitted paper: [arXiv:1511.06790](http://arxiv.org/abs/1511.06790)
+Submitted paper:
 
-PDF of poster: [P056-poster.pdf](P056-poster.pdf)
+PDF of poster:
 
-This paper should be cited as: Jenness 2016, in ADASS XXV, edited by N. P. F. Lorente & K. Shortridge (San Francisco: ASP), vol. in press of ASP Conf. Ser., arXiv:1511.06790
+This paper should be cited as: Jenness 2017, in ADASS XXVI, (San Francisco: ASP), vol. in press of ASP Conf. Ser.,
 
