@@ -47,14 +47,10 @@ Development of the LSST pipeline software began in 2004 \citep{2004AAS...2051081
 During these 12 years the code base has migrated through different versions of Python 2 but had not been made compatible with Python 3 until this year.
 In 2004 the expected first light for LSST was 2012 \citep{2004SPIE.5489..705C}, and the release of the first ``usable'' version of Python 3 (3.2) was not made until 2011, so during the early years of project development there was no need to worry about future Python developments.
 Now the astronomy computing environment is beginning to change and Python 3 is becoming more familiar to the community\footnote{\url{http://astrofrog.github.io/blog/2015/05/09/2015-survey-results/}}.
-There were some key motivators for LSST to support Python 3:
-\begin{enumerate}
-    \item The official statement from the Python developers is that Python 2.7 support will be dropped in 2020.
-    This is before the official start of the LSST survey and we do not want to commission software where the key executable under-pinning the entire system will soon lose support and which the operations team will immediately have to deal with.
-    \item LSST has external users of our software that provide early beta testing services and we do not want to actively impede those users from migrating to a more modern Python.
-    \item Astropy \citep{2013A&A...558A..33A} recently declared that it would drop support for Python 2 in 2017 \citep{APE10}, joining IPython and matplotlib. This declaration will motivate the community, and furthermore, LSST DM recently decided to integrate Astropy into our pipelines code \citep{doi:10.1117/12.2231313}.
-\end{enumerate}
-
+There were some key motivators for LSST to support Python 3: (a) The official statement from the Python developers is that Python 2.7 support will be dropped in 2020.
+This is before the official start of the LSST survey and we do not want to commission software where the key executable under-pinning the entire system will soon lose support and which the operations team will immediately have to deal with.
+(b) LSST has external users of our software that provide early beta testing services and we do not want to actively impede those users from migrating to a more modern Python.
+(c) Astropy \citep{2013A&A...558A..33A} recently declared that it would drop support for Python 2 in 2017 \citep{APE10}, joining IPython and matplotlib. This declaration will motivate the community, and furthermore, LSST DM recently decided to integrate Astropy into our pipelines code \citep{doi:10.1117/12.2231313}.
 
 \section{Supporting Python 3}
 
@@ -123,11 +119,9 @@ The success of the \texttt{future} abstraction can be seen in how few places the
 Currently, there is one place where the \texttt{encoding} argument is needed in \texttt{pickle.load} to load a Python 2 \texttt{pickle} file.
 There is one test that is disabled on Python 2 because Python 2 can not indicate to the C++ interface that there is any difference between bytes and characters.
 There is one place that needs to know whether a function is associated with a builtin (\texttt{\_\_builtins\_\_} on 2 and \texttt{builtins} on 3).
-
 The most complex problem we encountered was handling classes that use multiple inheritance of two classes which themselves define their own metaclasses (in our case these were \texttt{collections.UserDict} and \texttt{yaml.YAMLObject}.
 This is not allowed in Python 3 without defining a new metaclass that derives from both the relevant types.
 The syntax differences meant that the class definitions had to occur in versioned code branches.
-
 The imports from \texttt{past.builtins} will be removed when support for Python 2 is dropped (replacing \texttt{basestring} with \texttt{str} and \texttt{long} with \texttt{int}).
 
 \section{Current Status}
@@ -141,7 +135,7 @@ We may decide to drop Python 2 support for these as it is mostly server code and
 
 \acknowledgements I thank Russell Own for comments on the draft.
 The LSST software stack is the result of the efforts of the many people who are part of the Data Management Team at LSST, as well as outside contributors.
-This material is based upon work supported in part by the National Science Foundation through Cooperative Agreement 1258333 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory. Additional LSST funding comes from private donations, grants to universities, and in‐kind support from LSSTC Institutional Members.
+This material is based upon work supported in part by the National Science Foundation through Cooperative Agreement 1258333 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory. Additional LSST funding comes from private donations, grants to universities, and in-kind support from LSSTC Institutional Members.
 
 \bibliography{P6-12}  % For BibTex
 
