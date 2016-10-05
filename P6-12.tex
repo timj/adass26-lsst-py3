@@ -48,7 +48,7 @@ During these 12 years the code base has migrated through different versions of P
 In 2004 the expected first light for LSST was 2012 \citep{2004SPIE.5489..705C}, and the release of the first ``usable'' version of Python 3 (3.2) was not made until 2011, so during the early years of project development there was no need to worry about future Python developments.
 Now the astronomy computing environment is beginning to change and Python 3 is becoming more familiar to the community\footnote{\url{http://astrofrog.github.io/blog/2015/05/09/2015-survey-results/}}.
 There were some key motivators for LSST to support Python 3: (a) The official statement from the Python developers is that Python 2.7 support will be dropped in 2020.
-This is before the official start of the LSST survey and we do not want to commission software where the key executable under-pinning the entire system will soon lose support and which the operations team will immediately have to deal with.
+This is before the official start of the LSST survey and we do not want to commission software where the key executable under-pinning the entire system will soon lose support.
 (b) LSST has external users of our software that provide early beta testing services and we do not want to actively impede those users from migrating to a more modern Python.
 (c) Astropy \citep{2013A&A...558A..33A} recently declared that it would drop support for Python 2 in 2017 \citep{APE10}, joining IPython and matplotlib. This declaration will motivate the community, and furthermore, LSST DM recently decided to integrate Astropy into our pipelines code \citep{doi:10.1117/12.2231313}.
 
@@ -133,7 +133,7 @@ We hope to complete this work before the end of the year.
 Other Data Management code, including Qserv and the data access libraries, will be migrated over the coming winter.
 We may decide to drop Python 2 support for these as it is mostly server code and the migration to Python 3 is made significantly easier if support for 2 is not required.
 
-\acknowledgements I thank Russell Own for comments on the draft.
+\acknowledgements I thank Russell Owen for comments on the draft.
 The LSST software stack is the result of the efforts of the many people who are part of the Data Management Team at LSST, as well as outside contributors.
 This material is based upon work supported in part by the National Science Foundation through Cooperative Agreement 1258333 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory. Additional LSST funding comes from private donations, grants to universities, and in-kind support from LSSTC Institutional Members.
 
