@@ -50,7 +50,7 @@ Now the astronomy computing environment is beginning to change and Python 3 is b
 There were some key motivators for LSST to support Python 3: (a) The official statement from the Python developers is that Python 2.7 support will be dropped in 2020.
 This is before the official start of the LSST survey and we do not want to commission software where the key executable under-pinning the entire system will soon lose support.
 (b) LSST has external users of our software that provide early beta testing services and we do not want to actively impede those users from migrating to a more modern Python.
-(c) Astropy \citep{2013A&A...558A..33A} recently declared that it would drop support for Python 2 in 2017 \citep{APE10}, joining IPython and matplotlib. This declaration will motivate the community, and furthermore, LSST DM recently decided to integrate Astropy into our pipelines code \citep{doi:10.1117/12.2231313}.
+(c) Astropy \citep{2013A&A...558A..33A} recently declared that it would do bugfix-only maintenance releases supporting Python 2 after 2017, and that subsequent major releases would be Python 3 only \citep{APE10}, joining IPython, pandas, sunpy and matplotlib. This declaration will motivate the community, and furthermore, LSST DM recently decided to integrate Astropy into our pipelines code \citep{doi:10.1117/12.2231313}.
 
 \section{Supporting Python 3}
 
@@ -62,8 +62,7 @@ Before modernizing the code, we took the opportunity to tidy it using the \textt
 This includes replacing tabs with spaces as Python 3 no longer allows a mix of tab and space indents.
 The eventual aim is to run the \texttt{flake8} tool on all code submissions to allow code reviewers to focus on architectural and algorithmic issues rather than being distracted by coding standard violations.
 
-The next step was to run \texttt{futurize} but limiting it to running stage 1 fixups only.
-For stage 1 \texttt{futurize} updates the code to use Python 2.7 features.
+The next step was to run \texttt{futurize} stage one ``safe'' changes to modernize the codebase to use Python 2.7 features.
 This step adds no additional dependencies but is an important modernization required before supporting Python 3.
 In our code the main modernizations were enabling print as a function and absolute import from \texttt{\_\_future\_\_}, using the \texttt{in} operator rather than \texttt{has\_key()} and also modernizing exception handling to use the ``\texttt{except Exception as e}'' syntax rather than the older ``\texttt{except Exception, e}'' form.
 
@@ -133,7 +132,7 @@ We hope to complete this work before the end of the year.
 Other Data Management code, including Qserv and the data access libraries, will be migrated over the coming winter.
 We may decide to drop Python 2 support for these as it is mostly server code and the migration to Python 3 is made significantly easier if support for 2 is not required.
 
-\acknowledgements I thank Russell Owen for comments on the draft.
+\acknowledgements I thank Russell Owen and Fred Moolekamp for comments on the draft.
 The LSST software stack is the result of the efforts of the many people who are part of the Data Management Team at LSST, as well as outside contributors.
 This material is based upon work supported in part by the National Science Foundation through Cooperative Agreement 1258333 managed by the Association of Universities for Research in Astronomy (AURA), and the Department of Energy under Contract No. DE-AC02-76SF00515 with the SLAC National Accelerator Laboratory. Additional LSST funding comes from private donations, grants to universities, and in-kind support from LSSTC Institutional Members.
 
