@@ -62,7 +62,7 @@ Before modernizing the code, we took the opportunity to tidy it using the \textt
 This includes replacing tabs with spaces as Python 3 no longer allows a mix of tab and space indents.
 The eventual aim is to run the \texttt{flake8} tool on all code submissions to allow code reviewers to focus on architectural and algorithmic issues rather than being distracted by coding standard violations.
 
-The next step was to run \texttt{futurize} stage one ``safe'' changes to modernize the codebase to use Python 2.7 features.
+The next step was to run the \texttt{futurize} stage 1 command in order to modernize the codebase to use Python 2.7 features.
 This step adds no additional dependencies but is an important modernization required before supporting Python 3.
 In our code the main modernizations were enabling print as a function and absolute import from \texttt{\_\_future\_\_}, using the \texttt{in} operator rather than \texttt{has\_key()} and also modernizing exception handling to use the ``\texttt{except Exception as e}'' syntax rather than the older ``\texttt{except Exception, e}'' form.
 
