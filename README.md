@@ -6,7 +6,7 @@ Paper presented at the Astronomical Data Analysis Software and Systems XXVI conf
 
 Submitted paper:
 
-PDF of poster:
+PDF of poster: <http://doi.org/10.5281/zenodo.159973>
 
 This paper should be cited as: Jenness 2017, in ADASS XXVI, (San Francisco: ASP), vol. in press of ASP Conf. Ser.,
 
